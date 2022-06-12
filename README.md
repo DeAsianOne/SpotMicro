@@ -1,7 +1,8 @@
 # SpotMicro
 CAD model 1: https://www.thingiverse.com/thing:3445283
 CAD model 2 (currently used): https://www.thingiverse.com/thing:4559827
- Markup : * can be printed without support
+Markup : * 
+- can be printed without support
 - stronger joints, 3D prints less likely to break
 - doesn't need superglue
         
