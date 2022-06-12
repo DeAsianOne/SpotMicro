@@ -7,4 +7,6 @@ CAD model 2 (currently used): https://www.thingiverse.com/thing:4559827
         
 SpotMicroAI community - https://spotmicroai.readthedocs.io/en/latest/
 
-This repository 
+This repository contains code written by myself for an independent project. It is definitely not perfect.
+The content of each file is as below:
+- motor_move.py: 
