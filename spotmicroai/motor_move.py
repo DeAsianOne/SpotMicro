@@ -38,7 +38,7 @@ while True:
         selected_option, selected_index = pick(screen_options, title)
         
         while True:
-            user_input = int(input("Enter motor angle: "))
+            user_input = input("Enter motor angle: ")
             
             active_joint = servo.Servo(pca.channels[motors_config_list[selected_index]["channel"]])
             active_joint.set_pulse_width_range(motors_config_list[selected_index]["min_pulse"],motors_config_list[selected_index]["max_pulse"])
