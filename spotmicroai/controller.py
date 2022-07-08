@@ -5,9 +5,6 @@ pygame.init()
 # Loop until the user clicks the close button.
 done = False
 
-# Used to manage how fast the screen updates.
-clock = pygame.time.Clock()
-
 # Initialize the joysticks.
 pygame.joystick.init()
 
@@ -44,7 +41,5 @@ while not done:
         
         if (joystick.get_hat(0) == (0,1)):
             print("A was pressed")
-    
-    clock.tick(20)
     
 pygame.close()
