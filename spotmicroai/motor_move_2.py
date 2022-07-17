@@ -12,7 +12,7 @@ pca.frequency = 50
 
 joint_counter = 0
 
-while joint_counter <= 12:
+while joint_counter < 12:
     joint = servo.Servo(pca.channels[motors_config_list[joint_counter]["channel"]])
     joint.set_pulse_width_range(motors_config_list[joint_counter]["min_pulse"],motors_config_list[joint_counter]["max_pulse"])
     joint.angle = int(motors_config_list[joint_counter]["rest_angle"])
