@@ -27,7 +27,7 @@ while not done:
         for i in range(hats):
             hat = joystick.get_hat(i)
         
-        if (joystick.get_hat(0) == (0,1)):
+        if (joystick.get_button(0) == True):
             print("A was pressed")
     
 pygame.close()
