@@ -5,7 +5,6 @@ class IKUD():
     L0 = 0
     L1 = 11.5 # Leg
     L2 = 12 # Feet
-    A = 0 # Feet-ground angle
     B = 0 # Feet-shoulder angle 
     C = 0 # Feet-leg angle
     
