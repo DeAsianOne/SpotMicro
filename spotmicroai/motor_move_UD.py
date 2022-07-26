@@ -1,10 +1,3 @@
-import queue
-import busio
-from board import SCL, SDA
-from adafruit_pca9685 import PCA9685
-from adafruit_motor import servo
-from config import motors_config_list
-import time
 import pygame
 from IKUD import IKUD
 from SpotClass import Spot
