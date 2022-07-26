@@ -6,7 +6,6 @@ done = False
 clock = pygame.time.Clock()
 pygame.joystick.init()
 
-import queue
 import busio
 from board import SCL, SDA
 from adafruit_pca9685 import PCA9685
