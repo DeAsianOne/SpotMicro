@@ -1,9 +1,10 @@
+import busio
+from board import SCL, SDA
+from adafruit_pca9685 import PCA9685
+from adafruit_motor import servo
+from config import motors_config_list
+
 class Spot():
-    import busio
-    from board import SCL, SDA
-    from adafruit_pca9685 import PCA9685
-    from adafruit_motor import servo
-    from config import motors_config_list
     
     i2c_bus = busio.I2C(SCL, SDA)
     pca = PCA9685(i2c_bus, address = 0x42)
