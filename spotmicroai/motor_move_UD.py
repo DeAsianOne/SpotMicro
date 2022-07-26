@@ -14,10 +14,6 @@ done = False
 clock = pygame.time.Clock()
 pygame.joystick.init()
 
-i2c_bus = busio.I2C(SCL, SDA)
-pca = PCA9685(i2c_bus, address = 0x42)
-pca.frequency = 50
-
 IKUD = IKUD()
 Spot = Spot()
 
