@@ -12,8 +12,6 @@ Spot = Spot()
 
 L0 = 5
 shoulder_angle = 90
-leg_angle = 180
-feet_angle = 0
 
 while not done:
     #
