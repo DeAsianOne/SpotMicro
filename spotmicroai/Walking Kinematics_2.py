@@ -60,7 +60,7 @@ def swing_phase_2(L1, L2):
         x += 0.25
         
 def stand_phase_1(L1, L2):
-    z = -16
+    z = -12
     x = 3
     y = 0
     while x >= 0:
@@ -69,7 +69,7 @@ def stand_phase_1(L1, L2):
         x -= 0.25
         
 def stand_phase_2(L1, L2):
-    z = -16
+    z = -12
     x = 0
     y = 0
     while x >= -3:
