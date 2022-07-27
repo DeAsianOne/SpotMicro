@@ -40,42 +40,6 @@ def find_angles_p(x, y, z, L1, L2):
     Feet_angle = angle_4
 
     return Shoulder_angle, Leg_angle, Feet_angle
-
-def swing_phase_1(L1, L2):
-    x = -3
-    y = 0
-    while x <= 0:
-        z = 2*(9-(x+2)**2)**(1/2)-16
-        Shoulder_angle_swing, Leg_angle_swing, Feet_angle_swing = find_angles_n(x, y, z, L1, L2)
-        return Shoulder_angle_swing, Leg_angle_swing, Feet_angle_swing 
-        x += 0.25
-        
-def swing_phase_2(L1, L2):
-    x = 0
-    y = 0
-    while x >= 3:
-        z = 2*(9-(x+2)**2)**(1/2)-16
-        Shoulder_angle_swing, Leg_angle_swing, Feet_angle_swing = find_angles_p(x, y, z, L1, L2)
-        return Shoulder_angle_swing, Leg_angle_swing, Feet_angle_swing 
-        x += 0.25
-        
-def stand_phase_1(L1, L2):
-    z = -12
-    x = 3
-    y = 0
-    while x >= 0:
-        Shoulder_angle_stand, Leg_angle_stand, Feet_angle_stand = find_angles_p(x, y, z, L1, L2)
-        return Shoulder_angle_stand, Leg_angle_stand, Feet_angle_stand 
-        x -= 0.25
-        
-def stand_phase_2(L1, L2):
-    z = -12
-    x = 0
-    y = 0
-    while x >= -3:
-        Shoulder_angle_stand, Leg_angle_stand, Feet_angle_stand = find_angles_n(x, y, z, L1, L2)
-        return Shoulder_angle_stand, Leg_angle_stand, Feet_angle_stand 
-        x -= 0.25
         
 def leg_move(L1, L2):
     f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/3_motors.csv', 'w')
