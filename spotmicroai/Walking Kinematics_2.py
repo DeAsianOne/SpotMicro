@@ -42,7 +42,7 @@ def find_angles_p(x, y, z, L1, L2):
     return Shoulder_angle, Leg_angle, Feet_angle
         
 def leg_move(L1, L2):
-    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/3_motors.csv', 'w')
+    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/Walk_Angles.csv', 'w')
     f.truncate()
     writer = csv.writer(f, lineterminator = '\n')
     x_swing = -0.5
