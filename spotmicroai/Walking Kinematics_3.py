@@ -147,7 +147,7 @@ def front_left_swing(L1, L2, f):
         print(row)
     
 def leg_move(L1, L2):
-    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/3_motors.csv', 'w')
+    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/Walk_Angles.csv', 'w')
     f.truncate()
     rear_left_swing(L1, L2, f)
     front_right_swing(L1, L2, f)
