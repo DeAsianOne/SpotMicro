@@ -41,7 +41,7 @@ def stand_phase(L1, L2):
         x += 0.25
         
 def leg_move(L1, L2):
-    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/3_motors.csv', 'w')
+    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/Walk_Angles.csv', 'w')
     f.truncate()
     writer = csv.writer(f, lineterminator = '\n')
     x_swing = 4
