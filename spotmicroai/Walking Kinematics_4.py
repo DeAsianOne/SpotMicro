@@ -2,10 +2,6 @@ import math
 import csv
 L1 = 11.5
 L2 = 12
-x_swing = -0.5
-y_swing = 0
-x_stand = 3.5
-y_stand = 0
 
 def find_angles_n(x, y, z, L1, L2):
     L3 = (x**2 + z**2)**(1/2)
