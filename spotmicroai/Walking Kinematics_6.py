@@ -2,10 +2,15 @@ import math
 import csv
 L1 = 11.5
 L2 = 12
-x_swing = -0.5
-y_swing = 0
-x_stand = 3.5
-y_stand = 0
+
+def leg_move(L1, L2):
+    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/Walk_Angles.csv', 'w')
+    f.truncate()
+    rear_left_swing(L1, L2, f)
+    front_right_swing(L1, L2, f)
+    rear_right_swing(L1, L2, f)
+    front_left_swing(L1, L2, f)
+    f.close()
 
 def find_angles_n(x, y, z, L1, L2):
     L3 = (x**2 + z**2)**(1/2)
@@ -214,15 +219,6 @@ def front_left_swing(L1, L2, f):
         row = [shoulder_front, rear_leg_left, rear_feet_left, shoulder_front, 180 - (rear_leg_right), 180 - (rear_feet_right), shoulder_rear, front_leg_left, front_feet_left, shoulder_rear, 180 - (front_leg_right), 180 - (front_feet_right)]
         writer.writerow(row)
         print(row)
-    
-def leg_move(L1, L2):
-    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/3_motors.csv', 'w')
-    f.truncate()
-    rear_left_swing(L1, L2, f)
-    front_right_swing(L1, L2, f)
-    rear_right_swing(L1, L2, f)
-    front_left_swing(L1, L2, f)
-    f.close()
     
 leg_move(L1, L2)
     
