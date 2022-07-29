@@ -77,7 +77,7 @@ def stand_phase_rear(x_stand, z_stand, L1, L2):
     return Leg_angle_stand, Feet_angle_stand
 
 def stand_phase_front(x_stand, z_stand, L1, L2):
-    Leg_angle_stand, Feet_angle_stand = find_angles_stand(x_stand, 0, z_stand+2, L1, L2)
+    Leg_angle_stand, Feet_angle_stand = find_angles_stand(x_stand, 0, z_stand, L1, L2)
     return Leg_angle_stand, Feet_angle_stand
     
 def rear_left_swing(L1, L2, f):
