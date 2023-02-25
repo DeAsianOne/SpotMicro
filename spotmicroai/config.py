@@ -7,8 +7,8 @@ RSL = {
 
 RLL = {
        "channel": 10,
-       "min_pulse": 860,
-       "max_pulse": 2300,
+       "min_pulse": 950,
+       "max_pulse": 2420,
        "rest_angle": 180
        }
 

@@ -1,3 +1,10 @@
+import queue
+import busio
+from board import SCL, SDA
+from adafruit_pca9685 import PCA9685
+from adafruit_motor import servo
+from config import motors_config_list
+import time
 import pygame
 from IKUD import IKUD
 from SpotClass import Spot
@@ -7,11 +14,17 @@ done = False
 clock = pygame.time.Clock()
 pygame.joystick.init()
 
+i2c_bus = busio.I2C(SCL, SDA)
+pca = PCA9685(i2c_bus, address = 0x42)
+pca.frequency = 50
+
 IKUD = IKUD()
 Spot = Spot()
 
 L0 = 5
 shoulder_angle = 90
+leg_angle = 180
+feet_angle = 0
 
 while not done:
     #
@@ -37,14 +50,16 @@ while not done:
         # get_axis(). Position is a tuple of int values (x, y).
         for i in range(hats):
             hat = joystick.get_hat(i)
-        
+        # reads controller D-Pads
+        # updates height of robot
+        # finds new motor angles using trig        
         if (joystick.get_hat(0) == (0,1)):
             L0 += 1
             leg_angle, feet_angle = IKUD.calculate_angle(L0)
         elif (joystick.get_hat(0) == (0,-1)):
             L0 -= 1
             leg_angle, feet_angle = IKUD.calculate_angle(L0)
-            
+    # update motor angles, may have no movement if no new angles are generated.     
     Spot.turn_motor(shoulder_angle, leg_angle, feet_angle)
     
     clock.tick(20)

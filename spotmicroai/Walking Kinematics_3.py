@@ -4,7 +4,7 @@ L1 = 11.5
 L2 = 12
 x_swing = -0.5
 y_swing = 0
-z_stand = -12
+z_stand = -17
 x_stand = 3.5
 y_stand = 0
 
@@ -61,7 +61,7 @@ def find_angles_stand(x_stand, y_swing, z_swing, L1, L2):
     return Shoulder_angle_stand, Leg_angle_stand, Feet_angle_stand 
 
 def swing_phase(x_swing, L1, L2):
-    z_swing = 1.2*(9-((x_swing-1.5)**2))**(1/2)-12
+    z_swing = 1.5*(9-((x_swing-1.5)**2))**(1/2)-12
     Shoulder_angle_swing, Leg_angle_swing, Feet_angle_swing = find_angles_swing(x_swing, 0, z_swing, L1, L2)
     return Shoulder_angle_swing, Leg_angle_swing, Feet_angle_swing 
             
@@ -79,13 +79,13 @@ def rear_left_swing(L1, L2, f):
     while x_rear_left <= 4.5:
         rear_shoulder_left, rear_leg_left, rear_feet_left = swing_phase(x_rear_left, L1, L2)
         rear_shoulder_right, rear_leg_right, rear_feet_right = stand_phase(x_rear_right, L1, L2)
-        front_shoulder_left, front_leg_left, front_feet_left = stand_phase(x_front_left, L1, L2)
+        front_shoulder_left, front_feet_left, front_feet_left = stand_phase(x_front_left, L1, L2)
         front_shoulder_right, front_leg_right, front_feet_right = stand_phase(x_front_right, L1, L2)
         x_rear_left += 0.12
         x_rear_right -= 0.04
         x_front_left -= 0.04
         x_front_right -= 0.04
-        row = [rear_shoulder_left, rear_leg_left, rear_feet_left, rear_shoulder_right, 180 - rear_leg_right, 180 - rear_feet_right, front_shoulder_left, front_leg_left, front_feet_left, front_shoulder_right, 180 - front_leg_right, 180 - front_feet_right]
+        row = [rear_shoulder_left, rear_leg_left, rear_feet_left, 180 - rear_shoulder_right, 180 - rear_leg_right, 180 - rear_feet_right, front_shoulder_left, front_feet_left, front_feet_left, 180 - front_shoulder_right, 180 - front_leg_right, 180 - front_feet_right]
         writer.writerow(row)
         print(row)
         
@@ -98,13 +98,13 @@ def front_right_swing(L1, L2, f):
     while x_front_right <= 4.5:
         rear_shoulder_left, rear_leg_left, rear_feet_left = stand_phase(x_rear_left, L1, L2)
         rear_shoulder_right, rear_leg_right, rear_feet_right = stand_phase(x_rear_right, L1, L2)
-        front_shoulder_left, front_leg_left, front_feet_left = stand_phase(x_front_left, L1, L2)
+        front_shoulder_left, front_feet_left, front_feet_left = stand_phase(x_front_left, L1, L2)
         front_shoulder_right, front_leg_right, front_feet_right = swing_phase(x_front_right, L1, L2)
         x_rear_left -= 0.04
         x_rear_right -= 0.04
         x_front_left -= 0.04
         x_front_right += 0.12
-        row = [rear_shoulder_left, rear_leg_left, rear_feet_left, rear_shoulder_right, 180 - rear_leg_right, 180 - rear_feet_right, front_shoulder_left, front_leg_left, front_feet_left, 180 - front_shoulder_right, 180 - front_leg_right, 180 - front_feet_right]
+        row = [rear_shoulder_left, rear_leg_left, rear_feet_left, 180 - rear_shoulder_right, 180 - rear_leg_right, 180 - rear_feet_right, front_shoulder_left, front_feet_left, front_feet_left, 180 - front_shoulder_right, 180 - front_leg_right, 180 - front_feet_right]
         writer.writerow(row)
         print(row)
         
@@ -117,13 +117,13 @@ def rear_right_swing(L1, L2, f):
     while x_rear_right <= 4.5:
         rear_shoulder_left, rear_leg_left, rear_feet_left = stand_phase(x_rear_left, L1, L2)
         rear_shoulder_right, rear_leg_right, rear_feet_right = swing_phase(x_rear_right, L1, L2)
-        front_shoulder_left, front_leg_left, front_feet_left = stand_phase(x_front_left, L1, L2)
+        front_shoulder_left, front_feet_left, front_feet_left = stand_phase(x_front_left, L1, L2)
         front_shoulder_right, front_leg_right, front_feet_right = stand_phase(x_front_right, L1, L2)
         x_rear_left -= 0.04
         x_rear_right += 0.12
         x_front_left -= 0.04
         x_front_right -= 0.04
-        row = [rear_shoulder_left, rear_leg_left, rear_feet_left, 180 - rear_shoulder_right, 180 - rear_leg_right, 180 - rear_feet_right, front_shoulder_left, front_leg_left, front_feet_left, front_shoulder_right, 180 - front_leg_right, 180 - front_feet_right]
+        row = [rear_shoulder_left, rear_leg_left, rear_feet_left, 180 - rear_shoulder_right, 180 - rear_leg_right, 180 - rear_feet_right, front_shoulder_left, front_feet_left, front_feet_left, 180 - front_shoulder_right, 180 - front_leg_right, 180 - front_feet_right]
         writer.writerow(row)
         print(row)
     
@@ -136,18 +136,18 @@ def front_left_swing(L1, L2, f):
     while x_front_left <= 4.5:
         rear_shoulder_left, rear_leg_left, rear_feet_left = stand_phase(x_rear_left, L1, L2)
         rear_shoulder_right, rear_leg_right, rear_feet_right = stand_phase(x_rear_right, L1, L2)
-        front_shoulder_left, front_leg_left, front_feet_left = swing_phase(x_front_left, L1, L2)
+        front_shoulder_left, front_feet_left, front_feet_left = swing_phase(x_front_left, L1, L2)
         front_shoulder_right, front_leg_right, front_feet_right = stand_phase(x_front_right, L1, L2)
         x_rear_left -= 0.04
         x_rear_right -= 0.04
         x_front_left += 0.12
         x_front_right -= 0.04
-        row = [rear_shoulder_left, rear_leg_left, rear_feet_left, rear_shoulder_right, 180 - rear_leg_right, 180 - rear_feet_right, front_shoulder_left, front_leg_left, front_feet_left, front_shoulder_right, 180 - front_leg_right, 180 - front_feet_right]
+        row = [rear_shoulder_left, rear_leg_left, rear_feet_left, 180 - rear_shoulder_right, 180 - rear_leg_right, 180 - rear_feet_right, front_shoulder_left, front_feet_left, front_feet_left, 180 - front_shoulder_right, 180 - front_leg_right, 180 - front_feet_right]
         writer.writerow(row)
         print(row)
     
 def leg_move(L1, L2):
-    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/Walk_Angles.csv', 'w')
+    f = open('E:\Working From Home\__Sixth Form\Computer Science NEA\spotmicroai/3_motors.csv', 'w')
     f.truncate()
     rear_left_swing(L1, L2, f)
     front_right_swing(L1, L2, f)
